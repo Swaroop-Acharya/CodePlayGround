@@ -9,7 +9,7 @@ public class Demo{
   }
 
   public static void printArray(int arr[] ,int n ){
-    System.out.println("Array ELems:");
+    System.out.println("Array Elements:");
     for(int ele: arr)System.out.print(ele +" ");
 
     System.out.println("");
@@ -21,6 +21,15 @@ public class Demo{
       arr[b]=temp;
   }
 
+  public static void print2DArr(int arr[][] ,int rows,int cols){
+    System.out.println("2d Array Elements: ");
+    for(int i=0;i<rows;i++){
+      for(int j=0;j<cols;j++){
+        System.out.print(arr[i][i]+" ");
+      }
+      System.out.println();
+    }
+ }
 
 public static void reverserArr(int[] arr ,int left,int right){
   while(left < right){
@@ -60,7 +69,11 @@ public static int secondPosition(int nums[],int low,int high ,int t){
   return secondPosition; 
 }
 
-public static void arrayProblem(int[] nums ,int n){ 
+public static void arrayProblem(){ 
+  Scanner in  = new Scanner(System.in);
+  int n = in.nextInt();
+  int arr[]  = new int[n];
+  arrayInput(arr,n,in);
  // Scanner sc = new Scanner(System.in);
  // int t = sc.nextInt();
  // sc.close();
@@ -85,18 +98,25 @@ public static void arrayProblem(int[] nums ,int n){
     } 
   }
   System.out.println("index:"+ index);
+  printArray(arr,n);
 }
+public static void twoDArrayProblem(){
+  Scanner sc  = new Scanner(System.in);
+  int rows = sc.nextInt();
+  int cols = sc.nextInt();
 
+  int matrix[][] = new int[rows][cols];
+
+
+
+
+  print2DArr(matrix,rows,cols);
+  
+}
 public static void main(String[] args){
-   Scanner in  = new Scanner(System.in);
-   int n = in.nextInt();
-   int arr[]  = new int[n];
-   arrayInput(arr,n,in);
-
 
    //Start coding here
    arrayProblem(arr,n);
-
-   printArray(arr,n);
+   twoDArrayProblem() 
  }
 }
